@@ -328,7 +328,7 @@ button{cursor:pointer;font-family:var(--ff-body);}
 .footer-main{padding:70px 0 35px;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:45px;}
 .footer-about .logo{margin-bottom:16px;}
-.footer-about p{font-size:.85rem;color:var(--clr-text-muted);line-height:1.8;margin-bottom:16px;}
+.footer-about p{font-family:var(--ff-heading);font-size:1.15rem;font-weight:700;color:var(--clr-gold);line-height:1.6;margin-bottom:20px;letter-spacing:1px;}
 .footer-about .footer-services-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .footer-about .footer-services-tags span{padding:5px 14px;border:1px solid var(--clr-border);border-radius:20px;font-size:.72rem;color:var(--clr-text-muted);letter-spacing:1px;}
 .footer-heading{font-family:var(--ff-heading);font-size:1.05rem;color:var(--clr-white);margin-bottom:22px;position:relative;padding-bottom:10px;}
