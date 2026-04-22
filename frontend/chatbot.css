@@ -1,0 +1,147 @@
+/* ================================================================
+   SO Interiors — Dialogflow Messenger Chatbot Styles
+   Matches brand: gold (#c9a96e) on dark (#0b0b0f)
+   ================================================================ */
+
+/* ── Dialogflow Messenger CSS Variable Overrides ── */
+df-messenger {
+  --df-messenger-button-titlebar-color: #c9a96e;
+  --df-messenger-button-titlebar-font-color: #0b0b0f;
+  --df-messenger-chat-background-color: #111118;
+  --df-messenger-font-color: #e8e0d0;
+  --df-messenger-font-size: 14px;
+  --df-messenger-send-icon: #c9a96e;
+  --df-messenger-send-icon-color-focus: #b8924a;
+  --df-messenger-input-box-color: #1a1a24;
+  --df-messenger-input-font-color: #ffffff;
+  --df-messenger-input-placeholder-font-color: #6b6570;
+  --df-messenger-user-message: #c9a96e;
+  --df-messenger-bot-message: #1a1a24;
+  --df-messenger-chat-scroll-button-color: #c9a96e;
+  --df-messenger-minimized-chat-close-icon-color: #0b0b0f;
+  --df-messenger-titlebar-title-font-size: 16px;
+  --df-messenger-titlebar-title-font-weight: 600;
+  --df-messenger-titlebar-font-color: #0b0b0f;
+  z-index: 9999;
+}
+
+/* ── Chat Bubble Button ── */
+df-messenger::part(chat-bubble) {
+  background: linear-gradient(135deg, #c9a96e 0%, #b8924a 100%);
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+df-messenger::part(chat-bubble):hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(201, 169, 110, 0.6);
+}
+
+/* ── Chat Window ── */
+df-messenger::part(chat-wrapper) {
+  border-radius: 16px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+/* ── Title Bar ── */
+df-messenger::part(titlebar) {
+  background: linear-gradient(135deg, #c9a96e 0%, #b8924a 100%);
+  padding: 16px 20px;
+}
+
+/* ── Message Bubbles ── */
+df-messenger::part(user-message) {
+  background: linear-gradient(135deg, #c9a96e 0%, #b8924a 100%);
+  color: #0b0b0f;
+  border-radius: 16px 16px 4px 16px;
+  font-weight: 500;
+}
+
+df-messenger::part(bot-message) {
+  background: #1a1a24;
+  color: #e8e0d0;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: 16px 16px 16px 4px;
+}
+
+/* ── Input Area ── */
+df-messenger::part(input-box) {
+  background: #1a1a24;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+/* ── Custom Chat Launcher Badge ── */
+.chatbot-badge {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  background: linear-gradient(135deg, #c9a96e, #b8924a);
+  color: #0b0b0f;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(201, 169, 110, 0.35);
+  z-index: 9998;
+  animation: badgePop 0.5s ease 2s both, badgeFade 0.4s ease 8s forwards;
+  pointer-events: none;
+}
+
+.chatbot-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 18px;
+  width: 10px;
+  height: 10px;
+  background: #b8924a;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+@keyframes badgePop {
+  from { opacity: 0; transform: translateY(10px) scale(0.8); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes badgeFade {
+  from { opacity: 1; }
+  to   { opacity: 0; pointer-events: none; }
+}
+
+/* ── Pulse ring on chat button ── */
+.chatbot-pulse {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.3);
+  z-index: 9997;
+  animation: pulse 2s ease-out 1s 3;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  df-messenger {
+    --df-messenger-chat-window-width: calc(100vw - 20px);
+    --df-messenger-chat-window-height: 70vh;
+  }
+
+  .chatbot-badge {
+    right: 16px;
+    bottom: 80px;
+  }
+}
