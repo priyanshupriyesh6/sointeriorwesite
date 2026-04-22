@@ -58,6 +58,37 @@
     // 4. Decorative elements
     addBadge();
     addPulse();
+
+    // 5. Deep Style Injection for shadow DOM overrides
+    const interval = setInterval(() => {
+      const dfMessenger = document.querySelector('df-messenger');
+      if (dfMessenger && dfMessenger.shadowRoot) {
+        const dfChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
+        if (dfChat && dfChat.shadowRoot) {
+          const dfUserInput = dfChat.shadowRoot.querySelector('df-messenger-user-input');
+          if (dfUserInput && dfUserInput.shadowRoot) {
+            
+            // Fix input wrapper white background
+            if (!dfUserInput.shadowRoot.querySelector('#so-custom-input-style')) {
+              const style1 = document.createElement('style');
+              style1.id = 'so-custom-input-style';
+              style1.textContent = '.input-box-wrapper { background-color: #000000 !important; border-top: 1px solid rgba(201, 169, 110, 0.15) !important; padding: 5px !important; } input { background-color: #000000 !important; color: #ffffff !important; }';
+              dfUserInput.shadowRoot.appendChild(style1);
+            }
+            
+            // Fix chat wrapper height
+            if (!dfChat.shadowRoot.querySelector('#so-custom-chat-style')) {
+              const style2 = document.createElement('style');
+              style2.id = 'so-custom-chat-style';
+              style2.textContent = '.chat-wrapper { height: 480px !important; max-height: 75vh !important; bottom: 85px !important; }';
+              dfChat.shadowRoot.appendChild(style2);
+            }
+
+            clearInterval(interval);
+          }
+        }
+      }
+    }, 100);
   }
 
   // ── "Ask us anything" tooltip badge ─────────────────────────────

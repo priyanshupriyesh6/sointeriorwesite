@@ -5,6 +5,7 @@
 
 /* ── Dialogflow Messenger CSS Variable Overrides ── */
 df-messenger {
+  --df-messenger-chat-window-height: 520px;
   --df-messenger-button-titlebar-color: #c9a96e;
   --df-messenger-button-titlebar-font-color: #0b0b0f;
   --df-messenger-chat-background-color: #111118;
@@ -12,7 +13,7 @@ df-messenger {
   --df-messenger-font-size: 14px;
   --df-messenger-send-icon: #c9a96e;
   --df-messenger-send-icon-color-focus: #b8924a;
-  --df-messenger-input-box-color: #1a1a24;
+  --df-messenger-input-box-color: #0b0b0f;
   --df-messenger-input-font-color: #ffffff;
   --df-messenger-input-placeholder-font-color: #6b6570;
   --df-messenger-user-message: #c9a96e;
@@ -68,8 +69,12 @@ df-messenger::part(bot-message) {
 
 /* ── Input Area ── */
 df-messenger::part(input-box) {
-  background: #1a1a24;
+  background: #0b0b0f;
   border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+df-messenger::part(user-input) {
+  background: #0b0b0f;
 }
 
 /* ── Custom Chat Launcher Badge ── */
