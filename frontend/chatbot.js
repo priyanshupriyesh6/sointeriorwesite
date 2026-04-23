@@ -66,13 +66,14 @@
         const dfChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
         if (dfChat && dfChat.shadowRoot) {
           const dfUserInput = dfChat.shadowRoot.querySelector('df-messenger-user-input');
-          if (dfUserInput && dfUserInput.shadowRoot) {
+          const dfMessageList = dfChat.shadowRoot.querySelector('df-message-list');
+          if (dfUserInput && dfUserInput.shadowRoot && dfMessageList && dfMessageList.shadowRoot) {
             
             // Fix input wrapper white background
             if (!dfUserInput.shadowRoot.querySelector('#so-custom-input-style')) {
               const style1 = document.createElement('style');
               style1.id = 'so-custom-input-style';
-              style1.textContent = '.input-box-wrapper { background-color: #000000 !important; border-top: 1px solid rgba(201, 169, 110, 0.15) !important; padding: 5px !important; } input { background-color: #000000 !important; color: #ffffff !important; }';
+              style1.textContent = 'div.input-box-wrapper, .input-box-wrapper.valid { background-color: #000000 !important; background: #000000 !important; border-top: 1px solid rgba(201, 169, 110, 0.15) !important; padding: 5px !important; } input { background-color: #000000 !important; color: #ffffff !important; }';
               dfUserInput.shadowRoot.appendChild(style1);
             }
             
@@ -80,11 +81,17 @@
             if (!dfChat.shadowRoot.querySelector('#so-custom-chat-style')) {
               const style2 = document.createElement('style');
               style2.id = 'so-custom-chat-style';
-              style2.textContent = '.chat-wrapper { height: 480px !important; max-height: 75vh !important; bottom: 85px !important; }';
+              style2.textContent = '.chat-wrapper { height: 480px !important; max-height: 75vh !important; bottom: 85px !important; background-color: #000000 !important; } df-message-list { background-color: #000000 !important; }';
               dfChat.shadowRoot.appendChild(style2);
             }
 
-            clearInterval(interval);
+            // Fix message list scrollbar
+            if (!dfMessageList.shadowRoot.querySelector('#so-custom-scroll-style')) {
+              const style3 = document.createElement('style');
+              style3.id = 'so-custom-scroll-style';
+              style3.textContent = '#messageList::-webkit-scrollbar { width: 6px; } #messageList::-webkit-scrollbar-track { background: #000000 !important; } #messageList::-webkit-scrollbar-thumb { background: #1a1a24 !important; border-radius: 10px; } #messageList::-webkit-scrollbar-thumb:hover { background: #c9a96e !important; }';
+              dfMessageList.shadowRoot.appendChild(style3);
+            }
           }
         }
       }

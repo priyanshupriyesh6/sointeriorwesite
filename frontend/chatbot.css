@@ -8,16 +8,16 @@ df-messenger {
   --df-messenger-chat-window-height: 520px;
   --df-messenger-button-titlebar-color: #c9a96e;
   --df-messenger-button-titlebar-font-color: #0b0b0f;
-  --df-messenger-chat-background-color: #111118;
+  --df-messenger-chat-background-color: #000000;
   --df-messenger-font-color: #e8e0d0;
   --df-messenger-font-size: 14px;
   --df-messenger-send-icon: #c9a96e;
   --df-messenger-send-icon-color-focus: #b8924a;
-  --df-messenger-input-box-color: #0b0b0f;
+  --df-messenger-input-box-color: #000000;
   --df-messenger-input-font-color: #ffffff;
   --df-messenger-input-placeholder-font-color: #6b6570;
-  --df-messenger-user-message: #c9a96e;
-  --df-messenger-bot-message: #1a1a24;
+  --df-messenger-user-message: #000000;
+  --df-messenger-bot-message: #000000;
   --df-messenger-chat-scroll-button-color: #c9a96e;
   --df-messenger-minimized-chat-close-icon-color: #0b0b0f;
   --df-messenger-titlebar-title-font-size: 16px;
@@ -54,14 +54,15 @@ df-messenger::part(titlebar) {
 
 /* ── Message Bubbles ── */
 df-messenger::part(user-message) {
-  background: linear-gradient(135deg, #c9a96e 0%, #b8924a 100%);
-  color: #0b0b0f;
+  background: #000000;
+  color: #e8e0d0;
+  border: 1px solid rgba(201, 169, 110, 0.2);
   border-radius: 16px 16px 4px 16px;
   font-weight: 500;
 }
 
 df-messenger::part(bot-message) {
-  background: #1a1a24;
+  background: #000000;
   color: #e8e0d0;
   border: 1px solid rgba(201, 169, 110, 0.1);
   border-radius: 16px 16px 16px 4px;
@@ -69,12 +70,12 @@ df-messenger::part(bot-message) {
 
 /* ── Input Area ── */
 df-messenger::part(input-box) {
-  background: #0b0b0f;
+  background: #000000;
   border-top: 1px solid rgba(201, 169, 110, 0.15);
 }
 
 df-messenger::part(user-input) {
-  background: #0b0b0f;
+  background: #000000;
 }
 
 /* ── Custom Chat Launcher Badge ── */

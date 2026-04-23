@@ -14,24 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========== Navbar ==========
   const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('backToTop');
 
   function handleScroll() {
     const y = window.scrollY;
     if (y > 60) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
-    if (y > 400) backToTop.classList.add('visible');
-    else backToTop.classList.remove('visible');
   }
   window.addEventListener('scroll', handleScroll);
   handleScroll();
 
-  // ========== Back to Top ==========
-  if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+
 
   // ========== Mobile Nav ==========
   const hamburger = document.getElementById('hamburger');
