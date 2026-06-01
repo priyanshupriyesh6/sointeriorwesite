@@ -496,6 +496,22 @@ button{cursor:pointer;font-family:var(--ff-body);}
     aspect-ratio: 3/4 !important;
   }
 
+  /* Reset Stacked Founder Layout to LTR and Allow Word Wrap to Prevent Mobile Clipping */
+  .founder-card {
+    direction: ltr !important;
+    grid-template-columns: 1fr !important;
+    padding: 30px 20px !important;
+  }
+  .founder-card > * {
+    direction: ltr !important;
+  }
+  .founder-info h3 {
+    white-space: normal !important;
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
   /* 3D Cube mobile overrides */
   .cube-container {
     width: 280px;
