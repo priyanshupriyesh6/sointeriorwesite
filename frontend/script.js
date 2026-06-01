@@ -120,35 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ========== Testimonials Slider ==========
-  const testItems = document.querySelectorAll('.test-item');
-  const testDots = document.querySelectorAll('.test-dot');
-  let currentTest = 0;
-  let testTimer;
 
-  function showTest(index) {
-    testItems.forEach(t => t.classList.remove('active'));
-    testDots.forEach(d => d.classList.remove('active'));
-    if (testItems[index]) testItems[index].classList.add('active');
-    if (testDots[index]) testDots[index].classList.add('active');
-    currentTest = index;
-  }
-
-  function nextTest() {
-    showTest((currentTest + 1) % testItems.length);
-  }
-
-  testDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      showTest(parseInt(dot.getAttribute('data-index')));
-      clearInterval(testTimer);
-      testTimer = setInterval(nextTest, 5000);
-    });
-  });
-
-  if (testItems.length > 1) {
-    testTimer = setInterval(nextTest, 5000);
-  }
 
   // ========== Scroll Reveal ==========
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
