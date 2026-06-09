@@ -1,0 +1,4 @@
+# Ignore massive video files that crash Vercel upload API
+**/*.MOV
+**/*.mp4
+**/*.HEIC

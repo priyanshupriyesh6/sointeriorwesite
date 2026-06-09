@@ -164,6 +164,9 @@ button{cursor:pointer;font-family:var(--ff-body);}
   transform-style: preserve-3d;
   animation: rotateCube 16s infinite linear;
 }
+.cube-container:hover .cube {
+  animation-play-state: paused;
+}
 .cube-face {
   position: absolute;
   width: 350px;
@@ -621,4 +624,76 @@ button{cursor:pointer;font-family:var(--ff-body);}
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+/* ---------- Testimonials Section ---------- */
+#testimonials {
+  padding: var(--section-py) 0;
+  background: var(--clr-bg);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.testimonial-card {
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  padding: 40px;
+  border-radius: var(--radius);
+  position: relative;
+  transition: transform var(--tr-med), box-shadow var(--tr-med), border-color var(--tr-med);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--clr-gold);
+}
+.quote-icon {
+  font-family: serif;
+  font-size: 4rem;
+  color: var(--clr-gold);
+  line-height: 0.5;
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+.testimonial-text {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  flex-grow: 1;
+  font-style: italic;
+}
+.testimonial-author {
+  border-top: 1px solid var(--clr-border);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.client-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-gold);
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-author h4 {
+  font-family: var(--ff-heading);
+  color: var(--clr-white);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.testimonial-author span {
+  color: var(--clr-gold);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
