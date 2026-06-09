@@ -164,9 +164,6 @@ button{cursor:pointer;font-family:var(--ff-body);}
   transform-style: preserve-3d;
   animation: rotateCube 16s infinite linear;
 }
-.cube-container:hover .cube {
-  animation-play-state: paused;
-}
 .cube-face {
   position: absolute;
   width: 350px;
