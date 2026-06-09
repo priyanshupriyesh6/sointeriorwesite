@@ -297,4 +297,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  // ========== Expandable Folder Logic ==========
+  const projectCardsGrid = document.querySelectorAll('.project-full-card');
+  
+  projectCardsGrid.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if they clicked a link inside
+      if(e.target.closest('a')) return;
+      
+      const folder = card.nextElementSibling;
+      if (!folder || !folder.classList.contains('expanded-folder-section')) return;
+      
+      const isOpen = folder.classList.contains('is-open');
+      
+      if (isOpen) {
+        // Close it
+        folder.style.maxHeight = folder.scrollHeight + 'px';
+        folder.offsetHeight; // trigger reflow
+        folder.style.maxHeight = '0px';
+        folder.style.opacity = '0';
+        folder.style.padding = '0';
+        folder.style.margin = '0';
+        folder.classList.remove('is-open');
+        card.classList.remove('active-folder');
+        setTimeout(() => {
+          if (!folder.classList.contains('is-open')) {
+            folder.style.display = 'none';
+          }
+        }, 600);
+      } else {
+        // Close any currently open folders
+        document.querySelectorAll('.expanded-folder-section.is-open').forEach(openFolder => {
+          openFolder.style.maxHeight = openFolder.scrollHeight + 'px';
+          openFolder.offsetHeight; // trigger reflow
+          openFolder.style.maxHeight = '0px';
+          openFolder.style.opacity = '0';
+          openFolder.style.padding = '0';
+          openFolder.style.margin = '0';
+          openFolder.classList.remove('is-open');
+          
+          if(openFolder.previousElementSibling) {
+            openFolder.previousElementSibling.classList.remove('active-folder');
+          }
+          setTimeout(() => {
+            if (!openFolder.classList.contains('is-open')) {
+              openFolder.style.display = 'none';
+            }
+          }, 600);
+        });
+
+        // Open this one
+        folder.style.display = 'block';
+        folder.classList.add('is-open');
+        card.classList.add('active-folder');
+        
+        // Temporarily reset styles to measure natural height
+        folder.style.maxHeight = 'none';
+        folder.style.padding = '40px 20px';
+        folder.style.margin = '10px 0 30px 0';
+        const targetHeight = folder.scrollHeight;
+        
+        // Set it to 0 then animate
+        folder.style.maxHeight = '0px';
+        folder.style.padding = '0px';
+        folder.style.margin = '0px';
+        folder.offsetHeight; // trigger reflow
+        
+        folder.style.maxHeight = targetHeight + 'px';
+        folder.style.opacity = '1';
+        folder.style.padding = '40px 20px';
+        folder.style.margin = '10px 0 30px 0';
+        
+        // Auto scroll to card
+        setTimeout(() => {
+          const offset = card.getBoundingClientRect().top + window.pageYOffset - 100;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }, 400);
+        
+        // Remove hardcoded max-height after transition
+        setTimeout(() => {
+          if (folder.classList.contains('is-open')) {
+             folder.style.maxHeight = 'none';
+          }
+        }, 600);
+      }
+    });
+  });
+
 });
