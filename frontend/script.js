@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const siblings = parent.querySelectorAll(':scope > .reveal, :scope > .reveal-left, :scope > .reveal-right');
           let idx = 0;
           siblings.forEach((s, i) => { if (s === el) idx = i; });
-          el.style.transitionDelay = `${idx * 0.08}s`;
+          el.style.transitionDelay = (idx * 0.08) + 's';
         }
         el.classList.add('revealed');
       }
@@ -156,6 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
         email: document.getElementById('email')?.value || '',
         phone: document.getElementById('phone')?.value || '',
         projectType: document.getElementById('projectType')?.value || '',
+        state: document.getElementById('state')?.value || '',
+        city: document.getElementById('city')?.value || '',
+        budget: document.getElementById('budget')?.value || '',
         subject: document.getElementById('subject')?.value || '',
         message: document.getElementById('message')?.value || ''
       };
