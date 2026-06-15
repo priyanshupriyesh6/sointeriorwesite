@@ -14,9 +14,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Serve frontend (String concat prevents Vercel NFT from bundling the 300MB frontend into the API function)
-const frontendPath = __dirname + '/../frontend';
+// Serve frontend locally
+const f_part = 'front';
+const e_part = 'end';
+const frontendPath = __dirname + '/../' + f_part + e_part;
 app.use(express.static(frontendPath));
 
 // Contact form
