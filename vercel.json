@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "backend/server.js": {
+      "excludeFiles": "{frontend/**,../frontend/**}"
+    }
+  },
   "builds": [
     {
       "src": "backend/server.js",
