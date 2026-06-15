@@ -15,8 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+// Serve frontend (String concat prevents Vercel NFT from bundling the 300MB frontend into the API function)
+const frontendPath = __dirname + '/../frontend';
+app.use(express.static(frontendPath));
 
 // Contact form
 app.post('/api/contact', (req, res) => {
@@ -88,7 +89,7 @@ app.get('/api/health', (req, res) => {
 
 // SPA fallback
 app.get('/{*path}', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+  res.sendFile(frontendPath + '/index.html');
 });
 
 if (process.env.NODE_ENV !== 'production') {
