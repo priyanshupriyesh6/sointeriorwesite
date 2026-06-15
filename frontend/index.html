@@ -44,7 +44,6 @@
         <li><a href="process.html">Process</a></li>
         <li><a href="founders.html">Founders</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://so-interior-portfilio.onrender.com/" target="_blank" rel="noopener" class="nav-portfolio">Portfolio</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -112,26 +111,13 @@
     <div class="container">
       <div class="intro-grid">
         <div class="intro-image reveal-left">
-          <div class="cube-container">
-            <div class="cube">
-              <div class="cube-face face-front">
-                <img src="images/kylin(skybarconverted)/IMG_5037.jpg" alt="Kylin Skybar">
-              </div>
-              <div class="cube-face face-back">
-                <img src="images/kylin(aerocityconverted)/IMG_4989.jpg" alt="Kylin Aerocity">
-              </div>
-              <div class="cube-face face-left">
-                <img src="images/kylin(skybarconverted)/IMG_5024.jpg" alt="Skybar Lounge">
-              </div>
-              <div class="cube-face face-right">
-                <img src="images/kylin(aerocityconverted)/IMG_4994.jpg" alt="Premium Dining">
-              </div>
-            </div>
+          <div class="intro-video-wrapper">
+            <video class="intro-video" autoplay loop muted playsinline preload="metadata" poster="images/kylin(skybarconverted)/IMG_5037.jpg">
+              <source src="images/intropagevid/vid1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-          <div class="intro-badge">
-            <div class="num">630+</div>
-            <div class="lbl">Projects Delivered</div>
-          </div>
+
         </div>
         <div class="intro-text reveal-right">
           <p class="section-label">About Us</p>
@@ -158,36 +144,17 @@
         <h2 class="section-title" style="font-weight: 400; font-size: 2.2rem;">Trusted by our clients</h2>
       </div>
     </div>
-    <div class="marquee-container reveal">
-      <div class="marquee-track">
-        <div class="marquee-content">
-          <h4 class="partner-name">Baache by Kylin</h4>
-          <h4 class="partner-name">Factory by Sutra</h4>
-          <h4 class="partner-name">Kylin Noida</h4>
-          <h4 class="partner-name">MahaBelly</h4>
-          <h4 class="partner-name">Monique</h4>
-          <h4 class="partner-name">Pizza Express</h4>
-          <h4 class="partner-name">Raasta</h4>
-          <h4 class="partner-name">Shophouse by Kylin</h4>
-          <h4 class="partner-name">Spacetime</h4>
-          <h4 class="partner-name">Thalivar</h4>
-          <h4 class="partner-name">Kylin Aerocity</h4>
-          <h4 class="partner-name">Kylin Skybar</h4>
-        </div>
-        <div class="marquee-content">
-          <h4 class="partner-name">Baache by Kylin</h4>
-          <h4 class="partner-name">Factory by Sutra</h4>
-          <h4 class="partner-name">Kylin Noida</h4>
-          <h4 class="partner-name">MahaBelly</h4>
-          <h4 class="partner-name">Monique</h4>
-          <h4 class="partner-name">Pizza Express</h4>
-          <h4 class="partner-name">Raasta</h4>
-          <h4 class="partner-name">Shophouse by Kylin</h4>
-          <h4 class="partner-name">Spacetime</h4>
-          <h4 class="partner-name">Thalivar</h4>
-          <h4 class="partner-name">Kylin Aerocity</h4>
-          <h4 class="partner-name">Kylin Skybar</h4>
-        </div>
+    <div class="container reveal">
+      <div class="partners-grid">
+        <img src="images/companieslogos/bahce.png" alt="Baache by Kylin" class="partner-logo">
+        <img src="images/companieslogos/factory.jpeg" alt="Factory by Sutra" class="partner-logo">
+        <img src="images/companieslogos/kylin.jpeg" alt="Kylin" class="partner-logo">
+        <img src="images/companieslogos/mahabelly.png" alt="MahaBelly" class="partner-logo">
+        <img src="images/companieslogos/monique.jpeg" alt="Monique" class="partner-logo">
+        <img src="images/companieslogos/pizzaexpress.png" alt="Pizza Express" class="partner-logo">
+        <img src="images/companieslogos/raasta.png" alt="Raasta" class="partner-logo">
+        <img src="images/companieslogos/shophouse.jpeg" alt="Shophouse by Kylin" class="partner-logo">
+        <img src="images/companieslogos/thaliva.png" alt="Thalivar" class="partner-logo">
       </div>
     </div>
   </section>
@@ -342,6 +309,27 @@
             <span>Commercial</span>
           </div>
         </div>
+        <div class="project-card reveal">
+          <img src="images/Baache by kylin/IMG_6290.jpg" alt="Baache by kylin">
+          <div class="project-card-overlay">
+            <h4>Bahce by kylin</h4>
+            <span>Dining & Nightlife</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="images/MahaBelly Saket/IMG_5656.PNG" alt="MahaBelly Saket">
+          <div class="project-card-overlay">
+            <h4>MahaBelly Saket</h4>
+            <span>Dining & Nightlife</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="images/Raasta/IMG_6235.jpg" alt="Raasta Lounge">
+          <div class="project-card-overlay">
+            <h4>Raasta Lounge</h4>
+            <span>Dining & Nightlife</span>
+          </div>
+        </div>
       </div>
       <div style="text-align:center;margin-top:45px;" class="reveal">
         <a href="portfolio.html" class="btn btn-outline">View All Projects</a>
@@ -357,37 +345,99 @@
         <h2 class="section-title">What Our Clients Say</h2>
         <div class="section-line"></div>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="quote-icon">❝</div>
-          <p class="testimonial-text">"SO Interiors didn’t just design our restaurant—they understood the business behind it. Every corner was planned with purpose, from customer flow to aesthetics and functionality. What impressed us most was their ability to translate our vision into a space that not only looks exceptional but also works seamlessly for daily operations. The execution was flawless, and the final outcome exceeded our expectations."</p>
-          <div class="testimonial-author">
-            <img src="images/clients/maxime.jpeg" alt="Maxime Montay" class="client-avatar">
-            <div class="author-info">
-              <h4>Maxime Montay</h4>
-              <span>Founder of Monique</span>
+      <div class="testimonials-marquee reveal">
+        <div class="testimonials-marquee-track">
+          <div class="testimonials-marquee-content">
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"Creating the right ambience is critical in hospitality, and SO Interiors delivered exactly that. The team combined functionality, aesthetics, and brand identity seamlessly, resulting in a space that elevates the dining experience and reflects the essence of Kylin perfectly."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/Saurabh.jpeg" alt="Saurabh Khanijo" class="client-avatar">
+                <div class="author-info">
+                  <h4>Saurabh Khanijo</h4>
+                  <span>KYLIN</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"SO Interiors didn’t just design our restaurant—they understood the business behind it. Every corner was planned with purpose, from customer flow to aesthetics and functionality. What impressed us most was their ability to translate our vision into a space that not only looks exceptional but also works seamlessly for daily operations. The execution was flawless, and the final outcome exceeded our expectations."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/maxime.jpeg" alt="Maxime Montay" class="client-avatar">
+                <div class="author-info">
+                  <h4>Maxime Montay</h4>
+                  <span>Founder of Monique</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"What impressed us most about SO Interiors was their consistency and attention to detail. The entire process was smooth, transparent, and well-organized. We never had to chase updates or worry about execution—the team kept everything on track and delivered a space that exceeded our expectations."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/sanjeev.jpeg" alt="Sanjeev Laroia" class="client-avatar">
+                <div class="author-info">
+                  <h4>Sanjeev Laroia</h4>
+                  <span>Spacetime Management Private Limited</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"Building a dream space can be overwhelming, but SO Interiors made the journey effortless. Their design expertise, attention to detail, and execution standards were evident at every stage. The result is a home that feels elegant, functional, and uniquely ours. We couldn't have asked for a better experience."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/shivan.jpeg" alt="Mr. Shivan Gupta" class="client-avatar">
+                <div class="author-info">
+                  <h4>Shivan Gupta</h4>
+                  <span>Amaara Farms</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
-          <div class="quote-icon">❝</div>
-          <p class="testimonial-text">"What impressed us most about SO Interiors was their consistency and attention to detail. The entire process was smooth, transparent, and well-organized. We never had to chase updates or worry about execution—the team kept everything on track and delivered a space that exceeded our expectations."</p>
-          <div class="testimonial-author">
-            <img src="images/clients/sanjeev.jpeg" alt="Sanjeev Laroia" class="client-avatar">
-            <div class="author-info">
-              <h4>Sanjeev Laroia</h4>
-              <span>Spacetime Management Private Limited</span>
+          <!-- Duplicate for seamless looping -->
+          <div class="testimonials-marquee-content">
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"Creating the right ambience is critical in hospitality, and SO Interiors delivered exactly that. The team combined functionality, aesthetics, and brand identity seamlessly, resulting in a space that elevates the dining experience and reflects the essence of Kylin perfectly."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/Saurabh.jpeg" alt="Saurabh Khanijo" class="client-avatar">
+                <div class="author-info">
+                  <h4>Saurabh Khanijo</h4>
+                  <span>KYLIN</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-          <div class="quote-icon">❝</div>
-          <p class="testimonial-text">"Building a dream space can be overwhelming, but SO Interiors made the journey effortless. Their design expertise, attention to detail, and execution standards were evident at every stage. The result is a home that feels elegant, functional, and uniquely ours. We couldn't have asked for a better experience."</p>
-          <div class="testimonial-author">
-            <img src="images/clients/shivan.jpeg" alt="Mr. Shivan Gupta" class="client-avatar">
-            <div class="author-info">
-              <h4>Mr. Shivan Gupta</h4>
-              <span>Amaara Farms</span>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"SO Interiors didn’t just design our restaurant—they understood the business behind it. Every corner was planned with purpose, from customer flow to aesthetics and functionality. What impressed us most was their ability to translate our vision into a space that not only looks exceptional but also works seamlessly for daily operations. The execution was flawless, and the final outcome exceeded our expectations."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/maxime.jpeg" alt="Maxime Montay" class="client-avatar">
+                <div class="author-info">
+                  <h4>Maxime Montay</h4>
+                  <span>Founder of Monique</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"What impressed us most about SO Interiors was their consistency and attention to detail. The entire process was smooth, transparent, and well-organized. We never had to chase updates or worry about execution—the team kept everything on track and delivered a space that exceeded our expectations."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/sanjeev.jpeg" alt="Sanjeev Laroia" class="client-avatar">
+                <div class="author-info">
+                  <h4>Sanjeev Laroia</h4>
+                  <span>Spacetime Management Private Limited</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">❝</div>
+              <p class="testimonial-text">"Building a dream space can be overwhelming, but SO Interiors made the journey effortless. Their design expertise, attention to detail, and execution standards were evident at every stage. The result is a home that feels elegant, functional, and uniquely ours. We couldn't have asked for a better experience."</p>
+              <div class="testimonial-author">
+                <img src="images/clients/shivan.jpeg" alt="Mr. Shivan Gupta" class="client-avatar">
+                <div class="author-info">
+                  <h4>Shivan Gupta</h4>
+                  <span>Amaara Farms</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -424,11 +474,11 @@
               </div>
             </a>
 
-            <div class="footer-services-tags">
-              <span>Residential Interiors</span>
-              <span>Commercial Spaces</span>
-              <span>Dining Formats</span>
-              <span>Execution Support</span>
+            <div class="footer-contact-info" style="margin-top: 20px; font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.6;">
+              <p style="margin-bottom: 12px;"><strong style="color:var(--clr-white);">Registered Address:</strong><br>Mohan garden, dwarka mor<br>New Delhi - 110059</p>
+              <p style="margin-bottom: 12px;"><strong style="color:var(--clr-white);">Corporate Address:</strong><br>Savitri Cinema Complex, GK-2<br>New Delhi – 110048</p>
+              <p style="margin-bottom: 12px;"><strong style="color:var(--clr-white);">Call Us:</strong><br><a href="tel:+919811960048" style="color: inherit; text-decoration: none;">+91 98119 60048</a><br><a href="tel:+919599317145" style="color: inherit; text-decoration: none;">+91 95993 17145</a></p>
+              <p><strong style="color:var(--clr-white);">Email:</strong><br><a href="mailto:sointeriorsofficials@gmail.com" style="color: inherit; text-decoration: none;">sointeriorsofficials@gmail.com</a></p>
             </div>
           </div>
           <div>

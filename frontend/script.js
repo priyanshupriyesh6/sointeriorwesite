@@ -378,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
           window.scrollTo({ top: offset, behavior: 'smooth' });
         }, 400);
         
-        // Remove hardcoded max-height after transition
         setTimeout(() => {
           if (folder.classList.contains('is-open')) {
              folder.style.maxHeight = 'none';
@@ -387,5 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
 
 });
