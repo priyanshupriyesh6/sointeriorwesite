@@ -52,7 +52,7 @@ button{cursor:pointer;font-family:var(--ff-body);}
 .section-line{width:50px;height:2px;background:linear-gradient(90deg,var(--clr-gold-dark),var(--clr-gold),var(--clr-gold-dark));margin:0 auto 18px;}
 .section-desc{max-width:620px;margin:0 auto;font-size:0.92rem;color:var(--clr-text-muted);line-height:1.9;}
 
-.page-hero{position:relative;height:32vh;min-height:240px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--clr-bg-alt);}
+.page-hero{position:relative;padding:145px 0 35px;display:flex;justify-content:center;overflow:hidden;background:var(--clr-bg-alt);}
 .page-hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0.25;}
 .page-hero-content{position:relative;z-index:2;text-align:center;}
 .page-hero-content h1{font-family:var(--ff-heading);font-size:clamp(2.5rem,5vw,4rem);color:var(--clr-white);font-weight:700;margin-bottom:12px;}
@@ -342,6 +342,14 @@ button{cursor:pointer;font-family:var(--ff-body);}
 .c-detail .c-icon svg{width:18px;height:18px;fill:var(--clr-gold);}
 .c-detail h5{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:4px;font-weight:600;}
 .c-detail p{font-size:.88rem;color:var(--clr-text);}
+.c-detail p a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--tr-fast);
+}
+.c-detail p a:hover {
+  color: var(--clr-gold);
+}
 .social-links{display:flex;gap:12px;}
 .social-links a{width:42px;height:42px;border:1px solid var(--clr-border);display:flex;align-items:center;justify-content:center;border-radius:4px;transition:all var(--tr-fast);}
 .social-links a:hover{border-color:var(--clr-gold);background:var(--clr-gold);}
@@ -377,7 +385,7 @@ button{cursor:pointer;font-family:var(--ff-body);}
 .footer-main{padding:70px 0 35px;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:45px;}
 .footer-about .logo{margin-bottom:16px;}
-.footer-about p{font-family:var(--ff-heading);font-size:1.15rem;font-weight:700;color:var(--clr-gold);line-height:1.6;margin-bottom:20px;letter-spacing:1px;}
+.footer-about > p{font-family:var(--ff-heading);font-size:1.15rem;font-weight:700;color:var(--clr-gold);line-height:1.6;margin-bottom:20px;letter-spacing:1px;}
 .footer-about .footer-services-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .footer-about .footer-services-tags span{padding:5px 14px;border:1px solid var(--clr-border);border-radius:20px;font-size:.72rem;color:var(--clr-text-muted);letter-spacing:1px;}
 .footer-heading{font-family:var(--ff-heading);font-size:1.05rem;color:var(--clr-white);margin-bottom:22px;position:relative;padding-bottom:10px;}
@@ -471,8 +479,8 @@ button{cursor:pointer;font-family:var(--ff-body);}
   }
   .page-hero {
     height: auto !important;
-    min-height: 180px !important;
-    padding: 100px 0 40px !important;
+    min-height: auto !important;
+    padding: 100px 0 20px !important;
   }
 
   /* Prevent Oversized Founder Images on Mobile */
@@ -565,6 +573,59 @@ button{cursor:pointer;font-family:var(--ff-body);}
     .projects-full-grid {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* ---------- Trusted-By Hero Strip ---------- */
+.trusted-strip {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(var(--clr-gold-rgb, 182,144,94), 0.25);
+  border-bottom: 1px solid rgba(var(--clr-gold-rgb, 182,144,94), 0.25);
+  background: rgba(255,255,255,0.03);
+  padding: 28px 0;
+  overflow: hidden;
+  position: relative;
+}
+.trusted-label {
+  flex-shrink: 0;
+  padding: 0 32px 0 44px;
+  font-family: var(--ff-accent);
+  font-size: 0.82rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  white-space: nowrap;
+  border-right: 1px solid rgba(var(--clr-gold-rgb, 182,144,94), 0.3);
+}
+.trusted-track-wrapper {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.trusted-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: trustedScroll 30s linear infinite;
+}
+@keyframes trustedScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.trusted-logo {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 0.9;
+  transition: opacity 0.3s, transform 0.3s;
+  flex-shrink: 0;
+}
+.trusted-logo:hover {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 /* ---------- Partners Section ---------- */

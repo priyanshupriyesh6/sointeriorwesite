@@ -7,18 +7,22 @@ const PROJECT_ID    = 'so-nterior-website';
 const KEY_FILE_PATH = path.join(__dirname, 'so-nterior-website-a66085f17863.json');
 // ───────────────────────────────────────────────────────────────────
 
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// Serve frontend locally
-const f_part = 'front';
-const e_part = 'end';
-const frontendPath = __dirname + '/../' + f_part + e_part;
-app.use(express.static(frontendPath));
+
+// NOTE: On Vercel, the frontend is served directly by the CDN (@vercel/static).
+// express.static() is only used when running locally.
+if (process.env.NODE_ENV !== 'production') {
+  const frontendPath = path.join(__dirname, '..', 'frontend');
+  app.use(express.static(frontendPath));
+  app.get('/*path', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
 
 // Contact form
 app.post('/api/contact', (req, res) => {
@@ -43,13 +47,11 @@ app.post('/api/newsletter', (req, res) => {
 });
 
 // Dialogflow ES Chat Proxy
-// Requires: npm install @google-cloud/dialogflow uuid
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, sessionId } = req.body;
     if (!message) return res.status(400).json({ error: 'message is required' });
 
-    // Lazy-load to avoid crash if package not yet installed
     const dialogflow = require('@google-cloud/dialogflow');
     const { v4: uuidv4 } = require('uuid');
 
@@ -86,11 +88,6 @@ app.post('/api/chat', async (req, res) => {
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', server: 'SO Interiors Backend', timestamp: new Date().toISOString() });
-});
-
-// SPA fallback
-app.get('/{*path}', (req, res) => {
-  res.sendFile(frontendPath + '/index.html');
 });
 
 if (process.env.NODE_ENV !== 'production') {
